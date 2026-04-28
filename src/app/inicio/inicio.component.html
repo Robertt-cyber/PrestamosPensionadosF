@@ -16,25 +16,6 @@
           <button class="btn btn-primary btn-lg px-4 mr-3 shadow hover-lift" style="border-radius: 8px;">Solicitar Crédito</button>
         </div>
       </div>
-      
-      <div class="col-lg-6 fade-in-right">
-        <div class="p-5 bg-white shadow-lg rounded-lg border-bottom border-primary card-animation" style="border-width: 5px !important;">
-          <h3 class="h4 text-dark">Calcula tu cuota</h3>
-          <p class="small text-muted">Tasa fija anual del 15%</p>
-          <hr>
-          <div class="form-group">
-            <label class="small font-weight-bold text-dark">¿Cuánto dinero necesitas?</label>
-            <input type="number" [(ngModel)]="monto" class="form-control bg-light border-0 input-focus" placeholder="$ 0.00">
-          </div>
-          <button (click)="calcularPrestamo()" class="btn btn-block text-white font-weight-bold shadow-sm btn-animate" style="background-color: var(--dark);">
-            Calcular ahora
-          </button>
-          <div *ngIf="cuotaMensual" class="mt-4 p-3 rounded result-animation" style="background-color: var(--light); border: 1px dashed var(--primary);">
-            <p class="mb-0 small text-dark">Cuota mensual estimada:</p>
-            <h4 class="text-primary font-weight-bold mb-0">{{ cuotaMensual | currency:'USD' }}</h4>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </header>
@@ -45,7 +26,7 @@
     <div class="row">
       <div class="col-md-4 mb-4 fade-in-up" style="animation-delay: 0.1s;">
         <div class="bg-light p-5 rounded-lg shadow-sm stat-box hover-lift">
-          <h3 class="display-4 text-primary font-weight-bold counter" data-toggle="counter-up" data-from="+1000" data-to="10000">0</h3>
+          <h3 class="display-4 text-primary font-weight-bold counter" data-toggle="counter-up" data-from="+1000" data-to="10000">+1000</h3>
           <h6 class="text-uppercase text-dark font-weight-bold">Clientes Satisfechos</h6>
         </div>
       </div>

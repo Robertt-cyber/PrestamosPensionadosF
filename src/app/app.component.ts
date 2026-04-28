@@ -20,15 +20,6 @@ export class AppComponent {
 
   constructor(private supabaseService: SupabaseService) {}
 
-  // Lógica de la calculadora
-  calcularPrestamo() {
-    if (this.monto > 0) {
-      const tasaAnual = 0.15;
-      const plazoMeses = 12;
-      this.cuotaMensual = (this.monto * (1 + tasaAnual)) / plazoMeses;
-    }
-  }
-
   // Lógica para confirmar y guardar la cita
   async confirmarCita() {
     if (this.fechaCita && this.horaCita) {
