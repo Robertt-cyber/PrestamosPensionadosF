@@ -8,18 +8,10 @@ declare var $: any;
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements AfterViewInit {
-  monto: number = 0;
   cuotaMensual: number | null = null;
   fechaCita: string = '';
   horaCita: string = '';
   citaConfirmada: boolean = false;
-
-  calcularPrestamo() {
-    if (this.monto > 0) {
-      const interes = 1.15; 
-      this.cuotaMensual = (this.monto * interes) / 12;
-    }
-  }
 
   confirmarCita() {
     if (this.fechaCita && this.horaCita) {
