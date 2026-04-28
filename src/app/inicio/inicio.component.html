@@ -1,0 +1,104 @@
+<div class="py-2" style="background-color: var(--light); font-size: 0.8rem;">
+  <div class="container d-flex justify-content-between text-muted font-weight-bold">
+    <span><i class="fa fa-phone-alt mr-2 text-primary"></i> Llámanos: 55-29-83-96</span>
+    <span><i class="fa fa-clock mr-2 text-primary"></i> Lun - Vie: 9:00 AM - 6:00 PM</span>
+  </div>
+</div>
+
+<header class="position-relative overflow-hidden" style="background-color: var(--light); padding: 80px 0;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 fade-in-left">
+        <h6 class="text-primary font-weight-bold text-uppercase mb-3 slide-in">100% Confiable</h6>
+        <h1 class="display-4 font-weight-bold mb-4 fade-in" style="line-height: 1.1;">Tu pensión es tu respaldo, <span class="text-secondary">nosotros tu apoyo.</span></h1>
+        <p class="lead mb-4 text-muted fade-in-delay">Préstamos rápidos con descuento vía nómina. Sin trámites complicados.</p>
+        <div class="d-flex fade-in-delay-2">
+          <button class="btn btn-primary btn-lg px-4 mr-3 shadow hover-lift" style="border-radius: 8px;">Solicitar Crédito</button>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 fade-in-right">
+        <div class="p-5 bg-white shadow-lg rounded-lg border-bottom border-primary card-animation" style="border-width: 5px !important;">
+          <h3 class="h4 text-dark">Calcula tu cuota</h3>
+          <p class="small text-muted">Tasa fija anual del 15%</p>
+          <hr>
+          <div class="form-group">
+            <label class="small font-weight-bold text-dark">¿Cuánto dinero necesitas?</label>
+            <input type="number" [(ngModel)]="monto" class="form-control bg-light border-0 input-focus" placeholder="$ 0.00">
+          </div>
+          <button (click)="calcularPrestamo()" class="btn btn-block text-white font-weight-bold shadow-sm btn-animate" style="background-color: var(--dark);">
+            Calcular ahora
+          </button>
+          <div *ngIf="cuotaMensual" class="mt-4 p-3 rounded result-animation" style="background-color: var(--light); border: 1px dashed var(--primary);">
+            <p class="mb-0 small text-dark">Cuota mensual estimada:</p>
+            <h4 class="text-primary font-weight-bold mb-0">{{ cuotaMensual | currency:'USD' }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="py-5">
+  <div class="container text-center">
+    <h2 class="font-weight-bold mb-5 fade-in-up">¿Por qué elegir Dimex?</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="bg-light p-5 rounded-lg shadow-sm stat-box hover-lift">
+          <h3 class="display-4 text-primary font-weight-bold counter" data-toggle="counter-up" data-from="0" data-to="10000">0</h3>
+          <h6 class="text-uppercase text-dark font-weight-bold">Clientes Felices</h6>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 fade-in-up" style="animation-delay: 0.2s;">
+        <div class="bg-light p-5 rounded-lg shadow-sm stat-box hover-lift">
+          <h3 class="display-4 text-primary font-weight-bold">99%</h3>
+          <h6 class="text-uppercase text-dark font-weight-bold">Aprobación</h6>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="bg-light p-5 rounded-lg shadow-sm stat-box hover-lift">
+          <h3 class="display-4 text-primary font-weight-bold">24h</h3>
+          <h6 class="text-uppercase text-dark font-weight-bold">Desembolso</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-6 mx-auto fade-in-up">
+        <div class="card shadow-lg border-0 p-5 card-animation" style="border-radius: 15px;">
+          <h3 class="h4 text-dark mb-4">Agenda tu Cita</h3>
+          <div class="form-group text-left">
+            <label class="font-weight-bold">Selecciona la fecha</label>
+            <input type="date" [(ngModel)]="fechaCita" class="form-control bg-light border-0 input-focus">
+          </div>
+          <div class="form-group text-left">
+            <label class="font-weight-bold">Selecciona la hora</label>
+            <input type="time" [(ngModel)]="horaCita" class="form-control bg-light border-0 input-focus">
+          </div>
+          <button (click)="confirmarCita()" class="btn btn-primary btn-block text-white font-weight-bold py-3 shadow-sm btn-animate">
+            Confirmar Cita <i class="fa fa-check ml-2"></i>
+          </button>
+          
+          <div *ngIf="citaConfirmada" class="alert alert-success mt-3 shadow-sm alert-animation">
+            <i class="fa fa-calendar-check mr-2"></i> 
+            ¡Listo! Cita agendada para el <strong>{{ fechaCita }}</strong> a las <strong>{{ horaCita }}</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="py-5 mt-5" style="background-color: var(--dark); color: #fff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h5 class="text-primary font-weight-bold mb-4">Dimex</h5>
+        <p class="small text-muted">Protegemos tu futuro con transparencia y honestidad.</p>
+      </div>
+      <div class="col-md-6 text-md-right">
+        <h6 class="font-weight-bold">Contacto: 55-29-83-96</h6>
+        <p class="small text-muted">© 2026 Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
