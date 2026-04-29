@@ -1,0 +1,32 @@
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 35, 68, 0.15) !important;
+}
+
+.form-control:focus {
+  border-color: #BC955C;
+  box-shadow: 0 0 0 0.2rem rgba(188, 149, 92, 0.25);
+}
+
+textarea.form-control {
+  resize: vertical;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn:hover {
+  background-color: #a07c48 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(188, 149, 92, 0.3);
+}
+
+.alert {
+  border-radius: 5px;
+  border: none;
+  background-color: #d4edda;
+  color: #155724;
+}
